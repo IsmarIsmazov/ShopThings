@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
 <body>
     <aside>
-        <img src="{% static 'main/img/Supernatural-Logo-No-Background.png' %}" alt="Лого">
+<!--        <img src="{% static 'main/img/Supernatural-Logo-No-Background.png' %}" alt="Лого">-->
         <span class="logo">ShopThings</span>
         <h3>Навигация</h3>
         <ul>
-            <a href=""><li><i class="fa-regular fa-house"></i>Главная</li></a>
-            <a href=""><li><i class="fa-solid fa-user"></i>Про нас</li></a>
+            <a href="{% url 'home' %}"><li><i class="fa-regular fa-house"></i>Главная</li></a>
+            <a href="{% url 'users' %}"><li><i class="fa-solid fa-user"></i>Про нас</li></a>
             <a href=""><li><i class="fa-solid fa-user"></i>Пользователи</li></a>
         </ul>
     </aside>
