@@ -2,12 +2,22 @@
 {% block title%}главная страница{% endblock %}
 {% block content %}
 <div class="features">
-    <h1>
-        главная страница
-    </h1>
+    <h1>{{ title }}</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus excepturi itaque provident rerum velit.
         Adipisci assumenda consequuntur delectus dolore dolores mollitia, neque non quaerat quasi ratione sed tempora
         temporibus, veniam</p>
     <button class="btn btn-warning">главная страница</button>
+
+    {% for el in values %}
+        {% if el == 'hello'%}
+            {% filter upper %}
+                <p>{{ el }}</p>
+            {% endfilter %}
+        {% endif %}
+    {% endfor %}
+
+    {% for el in obj %}
+        <p>{{ el }}</p>
+    {% endfor %}
 </div>
 {% endblock %}
