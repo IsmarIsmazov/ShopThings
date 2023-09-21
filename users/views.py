@@ -29,7 +29,7 @@ class LoginView(TemplateView, ):
             )
             if user:
                 login(request, user)
-                return redirect('/products')
+                return redirect('/main')
             else:
                 form.add_error("username", "Bad request")
         data = {
@@ -43,7 +43,7 @@ class LoginView(TemplateView, ):
 class LogoutView(RedirectView):
     def get(self, request, *args, **kwargs):
         logout(request)
-        return redirect('/products/')
+        return redirect('/main/')
 
 
 
@@ -66,7 +66,7 @@ class RegisterView(CreateView):
                     password=form.cleaned_data.get('password1')
                 )
                 login(request, user)
-                return redirect('/products')
+                return redirect('/main')
             else:
                 form.add_error('password1', 'Password do not match')
         data = {
