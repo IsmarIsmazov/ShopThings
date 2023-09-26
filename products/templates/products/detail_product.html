@@ -1,0 +1,14 @@
+{% extends 'main/layout.html' %}
+
+{% block title%}{{ thing.title }}{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ thing.title }}</h1>
+        <p>{{ thing.created_at }}</p>
+        <p>{{ thing.descriptions }}</p>
+        <p>{{ thing.price }}</p>
+
+
+    </div>
+{% endblock %}
