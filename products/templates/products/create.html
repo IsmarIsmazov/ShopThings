@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block title%}Форма для добавление продутка{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>Форма для добавление продутка</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.descriptions }}<br>
+        {{ form.price }}<br>
+        <span>{{ error }}</span>
+        <button class="btn btn-success" type="submit">Добавить продукт</button>
+    </form>
+</div>
+{% endblock %}

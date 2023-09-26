@@ -1,13 +1,20 @@
 {% extends 'main/layout.html' %}
+
 {% block title%}Продукты{% endblock %}
+
 {% block content %}
-<div class="features">
-    <h1>Продукты</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus excepturi itaque provident rerum velit.
-        Adipisci assumenda consequuntur delectus dolore dolores mollitia, neque non quaerat quasi ratione sed tempora
-        temporibus, veniam</p>
-    <button class="btn btn-warning">главная страница</button>
+    <div class="features">
+        <h1>Продукты</h1>
+        {% if products %}
+            {% for el in products %}
+                <div class="alert alert-warning">
+                    <h3>{{ el.title }}</h3>
+                    <p>{{ el.descriptions }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>У вас нет продуктов</p>
+        {% endif %}
 
-
-</div>
+    </div>
 {% endblock %}
