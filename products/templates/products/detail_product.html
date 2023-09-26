@@ -8,6 +8,8 @@
         <p>{{ thing.created_at }}</p>
         <p>{{ thing.descriptions }}</p>
         <p>{{ thing.price }}</p>
+        <a href="{% url 'product_delete' thing.id %}" class="btn btn-danger ">Удалить продукт</a>
+        <a href="{% url 'product_update' thing.id %}" class="btn btn-danger ">Изменить продукт</a>
 
 
     </div>
